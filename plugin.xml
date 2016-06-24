@@ -22,9 +22,6 @@
 
 	<!-- android -->
     <platform name="android">
-	
-		<dependency id="com.google.playservices" />
-
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="KochavaEvents">
 				<param name="android-package" value="com.kochava.sdk.KochavaEvents" />			
