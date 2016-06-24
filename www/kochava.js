@@ -63,29 +63,10 @@ var Kochava = {
 	GetKochavaDeviceId:function(callback)		{
 		callCordovaCallback('GetKochavaDeviceId', callback);
 	},
-	
+	Init: function(options) {
+		callCordova('initKochava', options)
+	},
 };
-
-function initKochava() {
-
-	var dataMap = {};
-	dataMap["kochava_ios_app_id"] = '';	// insert your kochava ios app id from your dashboard
-	dataMap["kochava_android_app_id"] = '';	// insert your kochava android app id from your dashboard
-	dataMap["currency"] = '';	// default is US
-	dataMap["debug"] = true;
-	dataMap["request_attribution"] = false;
-	dataMap["app_limit_tracking"] = false;
-
-	// identity link data is optional
-//	var idlinkMap = {};
-//	idlinkMap[""] = "";
-//	idlinkMap[""] = "";
-//	dataMap["identity_link"] = idlinkMap;
-	
-	callCordova('initKochava', dataMap);
-}
-
-document.addEventListener('deviceready', initKochava ,false);
 
 module.exports = Kochava;
 
